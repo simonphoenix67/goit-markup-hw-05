@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HomeWork4</title>
+    <title>HomeWork5</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,700;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
@@ -60,7 +60,33 @@
       <section class="big-text bg-img">
         <div class="container">
           <h1 class="main-header">Эффективные решения для Вашего бизнеса</h1>
-          <button type="button" class="order-button">Заказать услугу</button>
+          <button type="button" class="order-button" data-modal-open>
+            Заказать услугу
+          </button>
+          <div class="backdrop is-hidden" data-modal>
+            <div class="modal">
+              <p class="modal-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+                voluptates aliquam, est expedita laboriosam cupiditate eos sit
+                praesentium, nulla neque mollitia quod fugit soluta, eveniet
+                accusamus maxime? Consectetur, reprehenderit. Quas ab minima
+                corporis aspernatur totam. Fugit laborum doloribus quidem
+                accusantium placeat asperiores, magnam facere debitis quod
+                maxime, porro eum eveniet? Animi quibusdam rem numquam possimus
+                soluta nesciunt laboriosam odio harum, alias quasi accusantium
+                libero perferendis. Corrupti sint necessitatibus accusantium a
+                quae explicabo eaque, libero vel minus dignissimos doloremque
+                quaerat numquam repellat quam. Aliquam ex earum sint laudantium
+                rem fuga nesciunt inventore voluptates cum. Ea expedita ullam
+                error impedit officia quis.
+              </p>
+              <button
+                type="button"
+                class="close-button"
+                data-modal-close
+              ></button>
+            </div>
+          </div>
         </div>
       </section>
       <section class="section">
@@ -444,5 +470,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
