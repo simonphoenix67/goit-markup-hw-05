@@ -431,6 +431,10 @@ h1 {
   margin-right: 30px;
 }
 
+.our-business-item {
+  position: relative;
+}
+
 /* падинг вниз, всей секции */
 .our-business-item:not(:last-child) {
   margin-right: 30px;
@@ -692,21 +696,29 @@ h1 {
   padding-top: 9px;
   padding-bottom: 9px;
   border-radius: 50%;
+  border: 1px solid#0000001A;
   z-index: 11;
-  /* background-image: url(../img/close-black.svg); */
+  background-color: #ffffff;
+  background-image: url(../img/close-black.svg);
+  /* outline: 1px solid green; */
 }
 
 .close-button-icon {
-position: absolute;
-  right: 8px;
-  top: 8px;
+  position: absolute;
+  /* right: 8px;
+  top: 8px; */
+  transform: translate(-50%, -50%);
   height: 11px;
   width: 11px;
-   /* padding-left: 10px;
+  border-radius: 50%;
+  /* padding-left: 10px;
   padding-right: 10px;
   padding-top: 9px;
-  padding-bottom: 9px; */
+  padding-bottom: 9px;  */
   z-index: 111;
+  stroke: black;
+  fill: var(--logo-color);
+  /* outline: 1px solid red; */
 }
 
 .links:hover .all-services-modal-text {
@@ -770,7 +782,6 @@ position: absolute;
 .footer-links {
   margin-left: 85px;
 }
-
 
 .join-us {
   font-weight: 700;
@@ -861,17 +872,48 @@ position: absolute;
   fill: var(--secondary-color);
 }
 
+.our-business-bg {
+  position: absolute;
+  bottom: 0;
+  height: 70px;
+  width: 100%;
+  background: rgba(47, 48, 58, 0.8);
+  border: 0;
+  margin-bottom: 3px;
+}
 
+.our-business-text {
+  text-align: center;
+  margin-bottom: 27px;
+  margin-top: 27px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
 
-/*
-/* .border-card {
-  border: 1px solid #EEEEEE;
- } */
-
-/* im
-    max-width: 100%;
-    height: auto;
-}  */
-
-/* ренеиминг
-на юл оставить кла
+/* .all-services-modal-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  background: rgba(33, 150, 243, 0.9);
+  transition: transform 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 18px;
+  line-height: 28px;
+  /* or 156% */
+/* 
+  letter-spacing: 0.03em;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 63px;
+  padding-bottom: 63px;
+} */
