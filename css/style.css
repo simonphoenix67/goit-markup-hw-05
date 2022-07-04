@@ -682,7 +682,31 @@ h1 {
 }
 
 .close-button {
-  background-image: url(../img/close-black.svg);
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  height: 11px;
+  width: 11px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  border-radius: 50%;
+  z-index: 11;
+  /* background-image: url(../img/close-black.svg); */
+}
+
+.close-button-icon {
+position: absolute;
+  right: 8px;
+  top: 8px;
+  height: 11px;
+  width: 11px;
+   /* padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 9px;
+  padding-bottom: 9px; */
+  z-index: 111;
 }
 
 .links:hover .all-services-modal-text {
@@ -747,7 +771,7 @@ h1 {
   margin-left: 85px;
 }
 
-/
+
 .join-us {
   font-weight: 700;
   font-size: 14px;
@@ -837,10 +861,7 @@ h1 {
   fill: var(--secondary-color);
 }
 
-  {
-  height: 20px;
-  fill: var(--secondary-color);
-}
+
 
 /*
 /* .border-card {
