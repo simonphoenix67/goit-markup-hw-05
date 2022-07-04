@@ -200,6 +200,8 @@ ul {
   line-height: 1.14;
   letter-spacing: 0.02em;
   display: flex;
+  transition: transform 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list-info {
@@ -247,11 +249,23 @@ ul {
 
 .info-svg {
   margin-right: 16px;
+  transition: transform 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mail {
+  transition: transform 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mail:hover .info-svg,
 .mail:focus .info-svg {
   fill: #2196f3;
+}
+
+.phone {
+  transition: transform 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .phone:hover .info-svg,
@@ -309,6 +323,8 @@ ul {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+  transition: transform 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .adress-item {
@@ -328,6 +344,8 @@ ul {
   letter-spacing: 0.03em;
   text-decoration: none;
   color: rgba(255, 255, 255, 0.6);
+  transition: transform 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 h1 {
@@ -466,6 +484,8 @@ h1 {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  transition: transform 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socials-link:hover,
@@ -477,6 +497,8 @@ h1 {
   width: 20px;
   height: 20px;
   fill: var(--logo-color);
+  transition: transform 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socials-link:hover .socials-icon,
@@ -493,6 +515,7 @@ h1 {
 .links {
   color: inherit;
   text-decoration: none;
+  position: relative;
 }
 
 .title-h2 {
@@ -538,15 +561,6 @@ h1 {
   margin-bottom: 50px;
 }
 
-.filter-button:hover,
-.filter-button:focus {
-  color: var(--secondary-color);
-  background-color: var(--brand-color);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
-}
-
 .filter-button {
   font-family: inherit;
   color: var(--main-color);
@@ -559,9 +573,18 @@ h1 {
   margin-left: auto;
   padding: 6px 22px;
   border: none;
+  transition: transform 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* добавить див для 9 элементов, добавить для х и р див, сделать рамку
- добавить расстояние между кнопками, паддинг сделать вниз, а не вверх */
+
+.filter-button:hover,
+.filter-button:focus {
+  color: var(--secondary-color);
+  background-color: var(--brand-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+}
 
 .button-list:not(:last-child) {
   margin-right: 8px;
@@ -570,6 +593,21 @@ h1 {
 .current,
 .blue-logo {
   color: var(--brand-color);
+}
+
+.current {
+  position: relative;
+}
+
+.current::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background: var(--brand-color);
+  border-radius: 2px;
 }
 
 .preview-header {
@@ -605,12 +643,50 @@ h1 {
 .service-item {
   outline: 1px solid #eeeeee;
   margin-bottom: 30px;
+  transition: transform 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .service-item:hover {
   outline: 1px solid #eeeeee;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.all-services-modal {
+  position: relative;
+  max-width: 370px;
+  overflow: hidden;
+}
+
+.all-services-modal-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  background: rgba(33, 150, 243, 0.9);
+  transition: transform 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 18px;
+  line-height: 28px;
+  /* or 156% */
+
+  letter-spacing: 0.03em;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 63px;
+  padding-bottom: 63px;
+}
+
+.close-button {
+  background-image: url(../img/close-black.svg);
+}
+
+.links:hover .all-services-modal-text {
+  transform: translateY(0);
 }
 
 .backdrop {
@@ -621,13 +697,11 @@ h1 {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.2);
 }
-
 .backdrop.is-hidden {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
 }
-
 .modal {
   opacity: 1;
   position: absolute;
@@ -638,7 +712,6 @@ h1 {
   height: 581px;
   background-color: #ffffff;
 }
-
 .action {
   display: flex;
   padding: 0;
@@ -646,7 +719,6 @@ h1 {
   list-style: none;
   justify-content: center;
 }
-
 .action-icon {
   fill: #afb1b8;
 }
@@ -657,7 +729,6 @@ h1 {
   height: 70px;
   margin: auto;
 }
-
 .action-icon,
 .action-logo {
   display: flex;
@@ -668,15 +739,15 @@ h1 {
   outline: 1px solid #afb1b8;
   border-radius: 4px;
 }
+.footer-links {
+  margin-left: 85px;
+}
 
 .footer-links {
   margin-left: 85px;
 }
 
-/* .footer-info-address {
-
-} */
-
+/
 .join-us {
   font-weight: 700;
   font-size: 14px;
@@ -686,7 +757,6 @@ h1 {
   color: var(--secondary-color);
   margin-bottom: 20px;
 }
-
 .preview-pics {
   display: flex;
   width: 270px;
@@ -694,7 +764,6 @@ h1 {
   background-color: #f5f4fa;
   margin-bottom: 30px;
 }
-
 .action-list:not(:last-child) {
   margin-right: 30px;
 }
@@ -708,19 +777,22 @@ h1 {
   color: var(--main-color);
   margin-bottom: 50px;
 }
-
+.action-icon {
+  transition: transform 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 .action-icon:hover,
 .action-icon:focus {
   fill: var(--brand-color);
 }
-
 .action-logo .footer-socials {
   display: flex;
   justify-content: center;
   align-items: center;
   list-style: none;
+  transition: transform 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .action-logo:hover,
 .action-logo:focus {
   display: flex;
@@ -730,12 +802,10 @@ h1 {
   outline: 1px solid var(--brand-color);
   border-radius: 4px;
 }
-
 .action-logo:hover .action-icon,
 .action-logo:focus .action-icon {
   fill: var(--brand-color);
 }
-
 .footer-socials-item:not(:last-child) {
   margin-right: 10px;
 }
@@ -746,7 +816,6 @@ h1 {
   align-items: center;
   list-style: none;
 }
-
 .footer-socials-link {
   display: flex;
   justify-content: center;
@@ -755,30 +824,33 @@ h1 {
   height: 44px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
+  transition: transform 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-socials-link:hover,
 .footer-socials-link:focus {
   background-color: var(--brand-color);
 }
-
 .footer-socials-icon {
   width: 20px;
   height: 20px;
   fill: var(--secondary-color);
 }
 
+  {
+  height: 20px;
+  fill: var(--secondary-color);
+}
+
+/*
 /* .border-card {
   border: 1px solid #EEEEEE;
  } */
 
-/* img {
-    display: block;
+/* im
     max-width: 100%;
     height: auto;
 }  */
 
 /* ренеиминг
-на юл оставить класс флекс
-лишкам задать падинг
-убрать падинг 94
-делать внешние через марджин */
+на юл оставить кла
