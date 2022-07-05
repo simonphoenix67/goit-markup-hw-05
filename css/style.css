@@ -695,9 +695,9 @@ h1 {
   height: 100%;
   color: #ffffff;
   background: rgba(33, 150, 243, 0.9);
-  transition-property: fill;
+  transition-property: fill, translateY;
   transition-duration: 250ms;
-  /* transition: transform 250ms; */
+  transition: transform 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   font-size: 18px;
   line-height: 28px;
